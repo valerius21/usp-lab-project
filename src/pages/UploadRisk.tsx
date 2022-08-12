@@ -2,6 +2,7 @@ import { Button, Image, Stack, TextInput, Title } from "@mantine/core"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useRecoilState } from "recoil"
+import Widget from "../components/Widget"
 import { mainDataState } from "../states/mainData"
 
 const UploadRisk = () => {
@@ -52,6 +53,9 @@ const UploadRisk = () => {
             >
                 {isUploading ? "Loading ... " : "Continue"}
             </Button>
+            <div style={{ position: 'absolute', top: 100, right: 30 }}>
+                <Widget />
+            </div>
         </Stack>
     )
 }

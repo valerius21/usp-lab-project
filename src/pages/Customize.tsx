@@ -1,30 +1,64 @@
 import { faker } from '@faker-js/faker';
 import { Button, List, ScrollArea, Stack, Text, ThemeIcon, Title } from "@mantine/core";
-import { IconCircleCheck, IconCircleDashed } from "@tabler/icons";
+import { IconCircleCheck, IconCircleDashed, IconCircleX } from "@tabler/icons";
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Widget from '../components/Widget';
 
+const DeactivatedIcon = () => {
+    return (
+        <ThemeIcon color="grey" size={24} radius="xl">
+            <IconCircleDashed />
+        </ThemeIcon>
+    )
+}
+
+const DangerIcon = () => (
+    <ThemeIcon color="red" size={24} radius="xl">
+        <IconCircleX size={16} />
+    </ThemeIcon>
+)
+
+const GreenIcon = () => (
+    <ThemeIcon color="teal" size={24} radius="xl">
+        <IconCircleCheck size={16} />
+    </ThemeIcon>
+)
+
 const UserList = () => {
+    const [itemOne, setItemOne] = useState(true)
+    const [itemTwo, setItemTwo] = useState(true)
+    const [itemThree, setItemThree] = useState(true)
+    const [itemFour, setItemFour] = useState(true)
+
     return (
         <List
             spacing="xs"
             size="sm"
             center
-            icon={
-                <ThemeIcon color="teal" size={24} radius="xl">
-                    <IconCircleCheck size={16} />
-                </ThemeIcon>
-            }
+
         >
-            <List.Item>{faker.name.fullName()}</List.Item>
-            <List.Item>{faker.name.fullName()}</List.Item>
-            <List.Item>{faker.name.fullName()}</List.Item>
             <List.Item
-                icon={
-                    <ThemeIcon color="red" size={24} radius="xl">
-                        <IconCircleDashed size={16} />
-                    </ThemeIcon>
-                }
+                icon={itemOne ? <GreenIcon /> : <DeactivatedIcon />}
+                onClick={() => setItemOne(!itemOne)}
+            >
+                {faker.name.fullName()}
+            </List.Item>
+            <List.Item
+                icon={itemTwo ? <GreenIcon /> : <DeactivatedIcon />}
+                onClick={() => setItemOne(!itemOne)}
+            >
+                {faker.name.fullName()}
+            </List.Item>
+            <List.Item
+                icon={itemThree ? <GreenIcon /> : <DeactivatedIcon />}
+                onClick={() => setItemOne(!itemOne)}
+            >
+                {faker.name.fullName()}
+            </List.Item>
+            <List.Item
+                icon={itemFour ? <DangerIcon /> : <DeactivatedIcon />}
+                onClick={() => setItemOne(!itemOne)}
             >
                 {faker.name.fullName()}
             </List.Item>

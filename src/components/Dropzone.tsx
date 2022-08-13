@@ -62,7 +62,7 @@ export function LabDropzone(props: Partial<DropzoneProps>) {
                 </Group>
             </Dropzone>}
             <SimpleGrid
-                cols={4}
+                cols={1}
                 breakpoints={[{ maxWidth: 'sm', cols: 1 }]}
                 mt={previews.length > 0 ? 'xl' : 0}
             >

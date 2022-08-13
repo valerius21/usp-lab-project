@@ -2,6 +2,7 @@ import { Button, Image, Stack, TextInput, Title } from "@mantine/core"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useRecoilState } from "recoil"
+import RiskBox from "../components/RiskBox"
 import Widget from "../components/Widget"
 import { mainDataState } from "../states/mainData"
 
@@ -18,6 +19,7 @@ const UploadRisk = () => {
     return (
         <Stack spacing={'xl'}>
             <Title>Upload Risk</Title>
+            <RiskBox />
             <Image
                 src={URL.createObjectURL(img)}
                 radius='lg'
@@ -47,7 +49,7 @@ const UploadRisk = () => {
                     setIsUploading(true);
                     setTimeout(() => {
                         setIsUploading(false)
-                        navigate('/upload-risk')
+                        navigate('/share')
                     }, 1500);
                 }}
             >

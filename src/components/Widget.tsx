@@ -31,10 +31,10 @@ const Widget = () => {
                     display: "flex",
                     borderColor: "#000",
                     alignItems: "center",
-                    height: 200 / 2,
-                    width: 384 / 2,
-                    backgroundSize: "contain",
-                    backgroundImage: `url("/b/${ringProps}.png")`
+                    height: 65,
+                    width: 334,
+                    backgroundSize: "cover",
+                    backgroundImage: `url("/p/${ringProps}.png")`
                 }}
             >
                 {/* <Ring data={ringProps} /> */}

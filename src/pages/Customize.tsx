@@ -98,9 +98,9 @@ const Customize = () => {
                     <UserList />
                 </Stack>
             </ScrollArea.Autosize>
-            <div style={{ position: 'absolute', top: 100, right: 100 }}>
-                <Widget />
-            </div>
+            {/* <div style={{ position: 'absolute', top: 100, right: 100 }}> */}
+            <Widget />
+            {/* </div> */}
             <Button
                 size='lg'
                 color="dark"

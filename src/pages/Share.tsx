@@ -84,9 +84,9 @@ const Share = () => {
                 </Button>
             </Group>
 
-            <div style={{ position: 'absolute', top: 100, right: 100 }}>
-                <Widget />
-            </div>
+            {/* <div style={{ position: 'absolute', top: 100, right: 100 }}> */}
+            <Widget />
+            {/* </div> */}
         </Stack>
     )
 }

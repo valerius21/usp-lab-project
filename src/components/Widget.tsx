@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { mainDataState } from "../states/mainData";
-import { Ring, rings } from "./Ring";
+import { rings } from "./Ring";
 
 const Widget = () => {
     const mainData = useRecoilValue(mainDataState)
@@ -28,9 +28,14 @@ const Widget = () => {
                     display: "flex",
                     borderColor: "#000",
                     alignItems: "center",
+                    height: 80,
+                    width: 80,
+                    backgroundSize: "contain",
+                    backgroundImage: `url("/smoker.jpg")`
                 }}
             >
-                <Ring data={ringProps} />
+                {/* <Ring data={ringProps} /> */}
+                {/* <img src="/smoker.jpg" alt="widget meter" width={70} height={70} style={{ objectFit: 'cover', }} /> */}
             </Paper>
         </motion.div>
     )

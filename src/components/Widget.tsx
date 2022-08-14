@@ -2,8 +2,11 @@ import { Paper } from "@mantine/core";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { useRecoilValue } from "recoil";
+import { seq } from "vseq";
 import { mainDataState } from "../states/mainData";
-import { rings } from "./Ring";
+// import { rings } from "./Ring";
+
+const rings = seq(0, 100, 25)
 
 const Widget = () => {
     const mainData = useRecoilValue(mainDataState)
@@ -21,17 +24,17 @@ const Widget = () => {
             whileTap={{ scale: 0.9 }}
         >
             <Paper
-                withBorder
-                shadow={"xl"}
-                radius={"xl"}
+                // withBorder
+                // shadow={"xl"}
+                // radius={"xl"}
                 sx={{
                     display: "flex",
                     borderColor: "#000",
                     alignItems: "center",
-                    height: 80,
-                    width: 80,
+                    height: 200 / 2,
+                    width: 384 / 2,
                     backgroundSize: "contain",
-                    backgroundImage: `url("/smoker.jpg")`
+                    backgroundImage: `url("/b/${ringProps}.png")`
                 }}
             >
                 {/* <Ring data={ringProps} /> */}

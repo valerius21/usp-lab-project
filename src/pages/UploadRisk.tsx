@@ -55,7 +55,7 @@ const UploadRisk = () => {
             >
                 {isUploading ? "Loading ... " : "Continue"}
             </Button>
-            <div style={{ position: 'absolute', top: 100, right: 30 }}>
+            <div style={{ position: 'absolute', top: 100, right: 100 }}>
                 <Widget />
             </div>
         </Stack>
